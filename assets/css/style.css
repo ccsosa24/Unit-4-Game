@@ -5,12 +5,12 @@
 }
 
 .crystal{
-    border: 1px solid green;
+    border: 1px solid palevioletred;
     height: 200px;
     width: 200px;
     border-radius: 4px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-    transition: box-shadow 4s;
+    transition: box-shadow 6s;
 }
 
 .crystal:hover{
@@ -24,3 +24,60 @@ img{
     width: 50px;
 }
 
+h1{
+    font-stretch: expanded;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase; 
+    font-size: 85px;
+    font-style: italic;
+
+}
+
+body{
+    color: whitesmoke;
+    height: 100%;
+}
+
+button{
+    background: blueviolet;
+    color: black;
+    border: solid 1px palevioletred;
+    cursor: pointer;
+    font-size: 2em;
+    padding: 18px 10px;
+    width:180px;
+    margin: 10px;
+    box-shadow: 5px 5px 5px blueviolet(0, 0, 0, 0.5);
+    transition: box-shadow 6s;
+}
+
+.button:hover{
+    background: whitesmoke;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.button{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+p{
+    font-size: 30px;
+}
+
+@media (max-width: 767px) {
+    #crystals {
+        padding: 0 0 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #crystals {
+        padding: 0 0 0 25px;
+    }
+}

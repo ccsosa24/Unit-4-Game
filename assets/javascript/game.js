@@ -27,16 +27,13 @@ var resetAndStart = function () {
         // console.log(random);
 
 
-        var crystal = $("<div>");
+        var crystal = $("<div>"); //for the div with crystals
         crystal.attr({
             "class": 'crystal',
             "data-random": random,
         });
 
-        crystal.css({
-            "background-image":"url('" + (images[i] + "')",
-            "background-size":"cover",
-        })
+        newFunction(crystal, images, i);
 
         $(".crystals").append(crystal);
 
@@ -78,8 +75,6 @@ $(document).on('click', ".crystal", function () {
         resetAndStart();
     }
 
-
-
 });
 
 
@@ -87,4 +82,11 @@ $(document).on('click', ".crystal", function () {
 
 
 
+
+function newFunction(crystal, images, i) {
+    crystal.css({
+        "background-image": "url('" + (images[i]) + "')",
+        "background-size": "cover"
+    });
+}
 
