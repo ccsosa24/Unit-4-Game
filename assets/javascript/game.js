@@ -66,9 +66,9 @@ $(document).on('click', ".crystal", function () {
        console.log("You Lost!!");    //should see if it say lost or win
         lost--;
 
-        $("#lost").html(lost);
+        $("#lost").html('lost: ' + lost);
 
-        previous = 0;
+        previous;
 
         resetAndStart();
     }
@@ -79,7 +79,7 @@ $(document).on('click', ".crystal", function () {
 
         $("#win").html('win: ' + win);
 
-        previous = 0;
+        previous;
 
         resetAndStart();
     }
