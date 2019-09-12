@@ -38,32 +38,7 @@ body{
     height: 100%;
 }
 
-button{
-    background: blueviolet;
-    color: black;
-    border: solid 1px palevioletred;
-    cursor: pointer;
-    font-size: 2em;
-    padding: 18px 10px;
-    width:180px;
-    margin: 10px;
-    box-shadow: 5px 5px 5px blueviolet(0, 0, 0, 0.5);
-    transition: box-shadow 6s;
-}
 
-.button:hover{
-    background: whitesmoke;
-    padding: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-
-}
-
-.button{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
 
 
 p{

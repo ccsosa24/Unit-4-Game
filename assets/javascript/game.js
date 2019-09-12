@@ -8,12 +8,13 @@ var previous = 0;
 
 var resetAndStart = function () {
 
-    $(".crystal").empty();
+
+    $(".crystals").empty();
 
     var images = [
         'https://www.colourbox.com/preview/3873723-broken-crystal-heart-unrequited-love-or-death.jpg',
-        'https://comps.canstockphoto.com/blue-broken-heart-unrequited-love-drawings_csp6167249.jpg', 
-        'http://www.johnharwood.com/JH_web-page/Gallery%20Images%201/Heart_Diamonds/Heart_Break_Most_Fragments_Dark_BG_1240x720.jpg', 
+        'https://comps.canstockphoto.com/blue-broken-heart-unrequited-love-drawings_csp6167249.jpg',
+        'http://www.johnharwood.com/JH_web-page/Gallery%20Images%201/Heart_Diamonds/Heart_Break_Most_Fragments_Dark_BG_1240x720.jpg',
         'https://thumbs.dreamstime.com/b/broken-red-heart-crystal-black-background-36498608.jpg'];
 
     random_result = Math.floor(Math.random() * 69) + 30;
@@ -22,7 +23,9 @@ var resetAndStart = function () {
     $("#result").html('Random Result: ' + random_result); //generating a ramdon num
 
 
+
     for (var i = 0; i < 4; i++) {    //loop
+
         var random = Math.floor(Math.random() * 11) + 1;
         // console.log(random);
 
@@ -30,7 +33,7 @@ var resetAndStart = function () {
         var crystal = $("<div>"); //for the div with crystals
         crystal.attr({
             "class": 'crystal',
-            "data-random": random,
+            "data-random": random
         });
 
         newFunction(crystal, images, i);
@@ -39,8 +42,11 @@ var resetAndStart = function () {
 
     }
 
-    $("#previous").html("Total Score: " + previous);
+    $("#previous").html('Total Score: ' + previous);
+
+   
 }
+
 
 
 
@@ -56,37 +62,44 @@ $(document).on('click', ".crystal", function () {
     previous += num;
     console.log(previous);
 
-    $("#previous").html("Total score: " + previous);
+    if(previous > random_result) {
+       console.log("You Lost!!");    //should see if it say lost or win
+        lost--;
 
-    if (previous > random_result) {
-        //console.log("You Lost!");
-        lost++;
-        $("#lose").html("You lost: " + lost);
+        $("#lost").html(lost);
+
         previous = 0;
 
         resetAndStart();
     }
-    else if (previous === random_result) {
-        //console.log("You Win!");
+    else if(previous === random_result) {
+        console.log("You Win!!");
+
         win++;
-        $("#win").html("You win: " + win);
+
+        $("#win").html('win: ' + win);
 
         previous = 0;
+
         resetAndStart();
     }
+
+
 
 });
 
 
 
-
-
-
-
-function newFunction(crystal, images, i) {
+function newFunction(crystal, images, i) {
     crystal.css({
         "background-image": "url('" + (images[i]) + "')",
         "background-size": "cover"
     });
 }
+
+
+
+
+
+
 
