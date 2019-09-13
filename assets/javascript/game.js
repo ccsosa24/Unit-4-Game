@@ -71,10 +71,12 @@ $(document).on('click', ".crystal", function () {
     if(previous > random_result) {
        console.log("You Lost!!");    //should see if it say lost or win
         lost--;
+
+
         alert("You Lose");
         $("#previous").html(previous);
         $("#lost").text('lost: ' + lost);
-
+        console.log("lost: " + lost);   //find out why its not showing for both
         previous;
 
         
@@ -93,7 +95,7 @@ $(document).on('click', ".crystal", function () {
 
         previous;
 
-        //update();
+      //  update();
 
         resetAndStart();
     }
@@ -103,12 +105,12 @@ $(document).on('click', ".crystal", function () {
 
 });
 
-//function update {
+//var update =
 
-    //document.getElementById("previous").innerHTML = previous;
-    //document.getElementById("win").innerHTML = win;
-    //document.getElementById("lost").innerHTML = lost;
-//}
+  //  document.getElementById("previous").innerHTML = previous;
+  //  document.getElementById("win").innerHTML = win;
+  //  document.getElementById("lost").innerHTML = lost;
+
 
 
 
