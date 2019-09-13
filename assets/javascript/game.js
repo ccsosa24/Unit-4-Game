@@ -1,7 +1,10 @@
+$(document).ready(function() {
+
 var random_result;
 var lost = 0;
 var win = 0;
-var previous = 0;
+var previous= 0;    //total Score
+//var update;
 
 
 
@@ -9,7 +12,7 @@ var previous = 0;
 var resetAndStart = function () {
 
 
-    $(".crystals").empty();
+  $(".crystals").empty();
 
     var images = [
         'https://www.colourbox.com/preview/3873723-broken-crystal-heart-unrequited-love-or-death.jpg',
@@ -17,7 +20,7 @@ var resetAndStart = function () {
         'http://www.johnharwood.com/JH_web-page/Gallery%20Images%201/Heart_Diamonds/Heart_Break_Most_Fragments_Dark_BG_1240x720.jpg',
         'https://thumbs.dreamstime.com/b/broken-red-heart-crystal-black-background-36498608.jpg'];
 
-    random_result = Math.floor(Math.random() * 69) + 30;
+    random_result = Math.floor(Math.random() * 100) + 20;
     //console.log(random_result);
 
     $("#result").html('Random Result: ' + random_result); //generating a ramdon num
@@ -48,6 +51,9 @@ var resetAndStart = function () {
 }
 
 
+    
+
+
 
 
 resetAndStart();
@@ -65,10 +71,13 @@ $(document).on('click', ".crystal", function () {
     if(previous > random_result) {
        console.log("You Lost!!");    //should see if it say lost or win
         lost--;
-
-        $("#lost").html('lost: ' + lost);
+        alert("You Lose");
+        $("#previous").html(previous);
+        $("#lost").text('lost: ' + lost);
 
         previous;
+
+        
 
         resetAndStart();
     }
@@ -77,16 +86,30 @@ $(document).on('click', ".crystal", function () {
 
         win++;
 
-        $("#win").html('win: ' + win);
+
+       alert("You Win");
+        $("#previous").html(previous);
+        $("#win").text('win: ' + win);
 
         previous;
+
+        //update();
 
         resetAndStart();
     }
 
-
+  
+    
 
 });
+
+//function update {
+
+    //document.getElementById("previous").innerHTML = previous;
+    //document.getElementById("win").innerHTML = win;
+    //document.getElementById("lost").innerHTML = lost;
+//}
+
 
 
 
@@ -100,6 +123,6 @@ function newFunction(crystal, images, i) {
 
 
 
-
+});
 
 
