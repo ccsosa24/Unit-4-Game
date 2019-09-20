@@ -1,5 +1,3 @@
-$(document).ready(function() {
-
 var random_result;
 var lost = 0;
 var win = 0;
@@ -11,8 +9,7 @@ var previous= 0;    //total Score
 
 var resetAndStart = function () {
 
-
-  $(".crystals").empty();
+  $(".crystals").empty(); //make sure there are only 4 crystals
 
     var images = [
         'https://www.colourbox.com/preview/3873723-broken-crystal-heart-unrequited-love-or-death.jpg',
@@ -39,16 +36,23 @@ var resetAndStart = function () {
             "data-random": random
         });
 
-        newFunction(crystal, images, i);
+        //crystal.css({
+           // "background-image":"url('" + image[i] +"')",
+          //  "background-size":"cover"
+        //});
+
+       newFunction(crystal, images, i);
 
         $(".crystals").append(crystal);
 
     }
 
-    $("#previous").html('Total Score: ' + previous);
-
-   
 }
+
+    $("#previous").html('Total Score: ' + previous);
+   
+   
+
 
 
     
@@ -68,19 +72,20 @@ $(document).on('click', ".crystal", function () {
     previous += num;
     console.log(previous);
 
+    $("#previous").html('Total Score: ' + previous);
+
     if(previous > random_result) {
        console.log("You Lost!!");    //should see if it say lost or win
         lost--;
 
 
-        alert("You Lose");
-        $("#previous").html(previous);
-        $("#lost").text('lost: ' + lost);
+       // alert("You Lose");
+       // $("#previous").html(previous);
+
+        $("#lost").html('You lost: ' + lost);
         console.log("lost: " + lost);   //find out why its not showing for both
-        previous;
-
+        previous = 0;
         
-
         resetAndStart();
     }
     else if(previous === random_result) {
@@ -89,11 +94,12 @@ $(document).on('click', ".crystal", function () {
         win++;
 
 
-       alert("You Win");
-        $("#previous").html(previous);
-        $("#win").text('win: ' + win);
+       //alert("You Win");
+        //$("#previous").html(previous);
 
-        previous;
+        $("#win").html('You win: ' + win);
+
+        previous = 0;
 
       //  update();
 
@@ -116,15 +122,15 @@ $(document).on('click', ".crystal", function () {
 
 
 function newFunction(crystal, images, i) {
-    crystal.css({
-        "background-image": "url('" + (images[i]) + "')",
-        "background-size": "cover"
+   crystal.css({
+     "background-image": "url('" + (images[i]) + "')",
+       "background-size": "cover"
     });
 }
 
 
 
 
-});
+
 
 
