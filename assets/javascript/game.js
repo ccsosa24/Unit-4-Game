@@ -1,5 +1,5 @@
 var random_result;
-var lost = 0;
+var lose = 0;
 var win = 0;
 var previous= 0;    //total Score
 //var update;
@@ -8,6 +8,8 @@ var previous= 0;    //total Score
 
 
 var resetAndStart = function () {
+
+  
 
   $(".crystals").empty(); //make sure there are only 4 crystals
 
@@ -82,7 +84,7 @@ $(document).on('click', ".crystal", function () {
        // alert("You Lose");
        // $("#previous").html(previous);
 
-        $("#lost").html('You lost: ' + lost);
+        $("#lose").html('You lost: ' + lose);
         console.log("lost: " + lost);   //find out why its not showing for both
         previous = 0;
         
@@ -131,6 +133,8 @@ function newFunction(crystal, images, i) {
 
 
 
-
+function refreshPage(){
+  window.location.reload();
+}
 
 
